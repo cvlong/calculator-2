@@ -18,6 +18,9 @@ while True:
     token = user_equation.lstrip()
     token = token.replace("  ", " ")
     token = token.split(" ")
+    
+    # If user wants to input multiple arguments:
+    # tokens = token[1:]
 
     if token[0] == "q":
         print "Thanks for playing! See you next time."
@@ -54,4 +57,4 @@ while True:
         print "Try Again."
         continue
 
-        
+
