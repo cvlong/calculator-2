@@ -16,6 +16,7 @@ print greeting
 while True:    
     user_equation = raw_input(">>>")
     token = user_equation.lstrip()
+    token = token.replace("  ", " ")
     token = token.split(" ")
 
     if token[0] == "q":
