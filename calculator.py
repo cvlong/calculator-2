@@ -8,53 +8,54 @@ calculator program yourself in this file.
 from arithmetic import *
 
 greeting ="""What equation would you like to perform?
-Please enter prefix notation. For example: + 4 5
-If you would like to quit, Enter 'q'
+(Please use prefix notation. For example: + 4 5
+To quit the program, enter 'q'
 """
 print greeting
 
 while True:    
-    user_equation = raw_input(">>>")
+    user_equation = raw_input(">")
     token = user_equation.lstrip()
     token = token.replace("  ", " ")
     token = token.split(" ")
     
+    token[0] = operation
     # If user wants to input multiple arguments:
     # tokens = token[1:]
 
-    if token[0] == "q":
+    if operation == "q":
         print "Thanks for playing! See you next time."
         break
     elif len(token) == 2:
         num1 = float(token[1])
         
-        if token[0] == "square":
+        if operation == "square":
             print square(num1)
-        elif token[0] == "cube":
+        elif operation == "cube":
             print cube(num1)
         else:
-            print "Try Again."
+            print "Try again."
         
     elif len(token) == 3:
         num1 = float(token[1])
         num2 = float(token[2])
         
-        if token[0] == "+":
+        if operation == "+":
             print add(num1, num2)
-        elif token[0] == "-":
+        elif operation == "-":
             print subtract(num1, num2)
-        elif token[0] == "*":
+        elif operation == "*":
             print multiply(num1, num2)
-        elif token[0] == "/":
+        elif operation == "/":
             print divide(num1, num2)
-        elif token[0] == "pow":
+        elif operation == "pow":
             print power(num1, num2)
-        elif token[0] == "mod":
+        elif operation == "mod":
             print mod(num1, num2)
         else:
-            print "Try Again."
+            print "Try again."
     else:
-        print "Try Again."
+        print "Try again."
         continue
 
 
